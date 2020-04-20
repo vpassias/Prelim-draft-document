@@ -1,0 +1,130 @@
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{array}
+\begin{document}
+\title{Refined Prelim Questions.}
+\maketitle
+
+
+\begin{enumerate}
+    \item In a heterostructure consisting of a ferromagnetic material, such as WS$_2$, and Na$_{3}$Bi , do the Fermi arc states of the latter contribute to a net magnetization of the heterostructure?
+
+    \begin{itemize}
+        \item On the materials project profile for Na$_{3}$Bi, we find multiple orientations for which WS$_2$ can fit onto Na$_{3}$Bi:
+        
+            \begin{center}
+            \begin{tabular}{ | m{4cm} | m{4cm} | } 
+            \hline
+            WS$_2$ orientation & Na$_{3}$Bi orientation \\ 
+            \hline
+            <101> & <100> \\
+            \hline
+            <111> & <001>\\
+            \hline
+            <100> & <100>\\
+            \hline
+            <001> & <001>\\
+            \hline
+            \end{tabular}
+            \end{center}
+        
+        \item WS$_2$ is a trivial insulator with a band gap of 1.563 eV.  
+        
+        \item It also has a ferromagnetic magnetization, with a "final magnetization" of 0.001 $\mu_B$. 
+        
+        \item Both WS$_2$ and Na$_{3}$Bi have the same space group: number 194 (P6$_3$/mmc).  
+        
+        \item Na$_{3}$Bi has strong spin-orbit coupling, and its Fermi arcs have spin-momentum locked degrees of freedom, which should have an effect on the magnetization of WS$_2$.
+        
+        \item We need to compare the net magnetization of both materials separately to when both materials are in a heterostructure.  
+        
+    \end{itemize}
+    
+    \item Does the presence/absence of Fermi arc states on the Na$_{3}$Bi (101) plane prohibit the formation of topological states in a heterostructure of Na$_{3}$Bi and a topological/non-topological material?  Is there any hybridization of states at the interface of the two materials in this heterostructure?  Are the interface states localized?
+    
+       \begin{itemize}
+          \item To begin with, we need to find if there Fermi arc states on the Na$_{3}$Bi (101) plane.  We will need to look at the band plots of the periodic and slab systems of the Na$_{3}$Bi (101) plane and determine if there are gapless band crossings aside from the bulk Dirac points.  The real space probability densities of these states should be plotted to determine whether or not they are localized at the surface.    
+            
+          \item Consider SiO$_2$ on Na$_3$Bi.
+    
+           \item  SiO$_2$ appears to be a nodal line semimetal, according to the topological materials database.
+           
+           \item It has a symmetry group number 154, but it is unstable.  According to the materials project website, this form of SiO$_2$ decomposes to a more stable form of symmetry group number 122.
+           
+           \item SiO$_2$, space group 154, can fit on the <101> orientation of Na$_3$Bi, just like some other compounds/elements:
+           
+            \begin{center}
+            \begin{tabular}{ | m{4cm} | m{4cm} | } 
+            \hline
+            Compound orientation & Na$_{3}$Bi orientation \\ 
+            \hline
+            SiO$_2$: <110> & <101> \\
+            \hline
+            C: <001> & <101>\\
+            \hline
+            GaTe (trivial): <100> & <101>\\
+            \hline
+            LiGaO$_2$ (trivial): <101> & <101>\\
+            \hline
+            \end{tabular}
+            \end{center}
+           
+           \item We need to evaluate the Chern number of the bulk bands of the heterostructure (SiO$_2$/Na$_3$Bi or GaTe/Na$_3$Bi, for example) to characterize the topological states. 
+           
+           \item We should obtain band plots for the topological/non-topological materials separately and in the heterostructure to find which orbitals contribute to the states at the interface.  Then, we should plot their real space probability densities of the interface states to see if hybridization occurs.  
+           
+           \item The localization of interface states in the heterostructure can be analyzed by plotting the real space probability densities with respect to the growth axis (i.e. the direction along which we stack the layers of the heterostructure).  
+           
+           \item How does the hybridization and localization of the interface states compare with other heterostructures such as GaTe/Na$_3$Bi? 
+           
+       \end{itemize}
+       
+        \item Does the absence of Fermi arc states on the Na$_3$Bi (001) plane prohibit the formation of topological states in a heterostructure of a topological/non-topological material grown on the Na$_3$Bi (001) plane?
+        
+        \begin{itemize}
+        
+            \item Prove there are no Fermi arc states on the Na$_3$Bi (001) plane.
+            
+            \item There are a number of transition metal based materials, semiconductors and insulators that can be grown on the Na$_3$Bi (001) plane according to the materialsproject website: 
+            
+            \begin{center}
+            \begin{tabular}{ | m{4cm} | m{3cm} | } 
+            \hline
+            Compound orientation & Na$_{3}$Bi orientation \\ 
+            \hline
+            WS$_2$: <111> & <001> \\
+            \hline
+            WS$_2$: <001> & <001> \\
+            \hline
+            WSe$_2$: <001> & <001>\\
+            \hline
+            MoS$_2$: <001> & <001>\\
+            \hline
+            MoSe$_2$: <001> & <001>\\
+            \hline
+            La$F_3$: <001> & <001>\\
+            \hline
+            BN: <001> & <001>\\
+            \hline
+            Mg: <110> & <001>\\
+            \hline
+            CeO$_2$: <100> & <001>\\
+            \hline
+            Si: <100> & <001>\\
+            \hline
+            \end{tabular}
+            \end{center}
+            
+            \item Does the orientation of WS$_2$ affect the presence or absence of the topological states at the interface of this material and Na$_{3}$Bi?
+            
+            \item  Does the orientation of WS$_2$ affect the hybridization of states at the interface of a WS$_2$/Na$_3$Bi heterostructure?
+            
+            \item I was considering combining Na$_3$Bi with EuMg$_2$ which is a ferromagnetic topological insulator that has the same symmetry group (194) as Na$_3$Bi.  However, EuMg$_2$ is not stable since it decomposes to a different form with symmetry group 227.   
+            
+        \end{itemize}
+        
+\end{enumerate}
+
+\end{document}

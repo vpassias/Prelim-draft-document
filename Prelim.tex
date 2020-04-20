@@ -33,7 +33,7 @@
 \renewcommand{\baselinestretch}{1.5} %Line spacing
 
 
-\addbibresource{references.bib}
+\addbibresource{Prelim.bib}
 
 \begin{document}
 
@@ -78,11 +78,39 @@ True statements:
 
 \section{Introduce Gaps in Knowledge.}
 
+\subsection{Density Functional Theory}
+
+Describing solid state systems requires dealing with a large number of electrons and ions.  In order to describe such a system we need to solve the many-particle Schrodinger equation involving a many-particle wavefunction:
+
+\begin{align}
+i\hbar\frac{\partial \psi(\{\textbf{r}_e\},\{\textbf{r}_A\};t)}{\partial t} = \hat{H} \psi(\{\textbf{r}_e\},\{\textbf{r}_A\};t) \label{eq:1} \\
+\hat{H} = - \sum_{i}^{N} \frac{\hbar^{2}}{2m} \nabla^{2}_{i} - \sum_{I}^{N_{I}} \frac{\hbar^{2}}{2 M_{I}} \nabla^{2}_{I} - \sum_{i}^{N} \sum_{I}^{N_{I}} \frac{Z_{I}e^2}{|r_i - R_I|} + \sum_{i < j} \frac{e^2}{|r_{i} - r_{j}|} + \sum_{I < J }^{N_{I}} \frac{Z_{I} Z_{I} e^2 }{|R_{I} - R_{J}|}
+\label{eq:2}
+\end{align}
+
+\noindent In equation (\ref{eq:1}) the many-particle wavefunction accounts for the electrons and nuclei.  The positions of the electrons and nuclei are noted in that equation by $\{\textbf{r}_e\}$ and $\{\textbf{r}_A\}$, respectively.  The Hamiltonian of this system is shown in equation (\ref{eq:2}). Electrons are associated with the indices $i$ and $j$, while nucleons are associated with the indices $I$ and $J$.  Equation (\ref{eq:1}) is very difficult to solve in practice given the large number of electrons and ions in a solid, but we can use an approximation to make the problem easier.  One approximation is given that the nuclei are more massive than the electrons, the former's motion can be neglected.  This simplification is at the heart of the Born-Oppenheimer approximation. Consequently, we can focus on the electronic part of the Hamiltonian and wavefunction:  
+
+\begin{align}
+    \hat{H}_{e} = - \sum_{i}^{N} \frac{\hbar^{2}}{2m} \nabla^{2}_{i} - \sum_{i}^{N} \sum_{I}^{N_{I}} \frac{Z_{I}e^2}{|r_i - R_I|} + \sum_{i < k} \frac{e^2}{|r_{i} - r_{k}|} + \sum_{I < J }^{N_{I}} \frac{Z_{I} Z_{I} e^2 }{|R_{I} - R_{J}|}\label{eq:3} \\
+    \hat{H}_{e}\psi(\textbf{r}_1,\cdots,\textbf{r}_N) = E_{e} \psi(\textbf{r}_1,\cdots,\textbf{r}_N) \label{Electron_eval}
+\end{align}
+
+\noindent The last term in equation (\ref{eq:3}), which corresponds to the Coulomb interaction between nuclei, can be regarded as a constant shift in the energy. Although we have simplified the problem, solving for the electron eigenenergies in equation (\ref{Electron_eval}) still remains a daunting task for a large number of electrons in a typical crystalline solid. 
+
+We can approach the eigenvalue problem in equation (\ref{Electron_eval}) in a different via multiplying both sides by $\psi(\textbf{r}_1,\cdots,\textbf{r}_N)$ and subsequently integrate over all electronic positions: 
+
+\begin{align}
+    \int \psi^{*}(\textbf{r}_1,\cdots,\textbf{r}_N)\hat{H}_{e}\psi(\textbf{r}_1,\cdots,\textbf{r}_N) d\textbf{r}_1 \cdots d\textbf{r}_N = E_{e} \int \psi^{*}(\textbf{r}_1,\cdots,\textbf{r}_N) \psi(\textbf{r}_1,\cdots,\textbf{r}_N) d\textbf{r}_1 \cdots d\textbf{r}_N  \\
+    E_{e} = \frac{\int \psi^{*}(\textbf{r}_1,\cdots,\textbf{r}_N)\hat{H}_{e}\psi(\textbf{r}_1,\cdots,\textbf{r}_N) d\textbf{r}_1 \cdots d\textbf{r}_N}{\int \psi^{*}(\textbf{r}_1,\cdots,\textbf{r}_N) \psi(\textbf{r}_1,\cdots,\textbf{r}_N) d\textbf{r}_1 \cdots d\textbf{r}_N} \label{E_energy}
+\end{align}
+
+\noindent We see that the electron energy can be written as a functional of the electronic wavefunction.  Given the normalization requirement of the wavefunction, the denominator of equation (\ref{E_energy}) is unity.     
+
 \subsection{Topological Insulators}
 
 Topological materials have garnered significant attention in the condensed matter community in past few years because of their peculiar electronic properties. There are non-interacting and strongly interacting topological systems.\cite{hasan_colloquium:_2010,qi_topological_2011,rachel_interacting_2018} Here we will focus on topological Dirac semimetals which are non-interacting electronic topological systems related to topological insulators.  Let us first discuss what topological insulators are. 
 
-Topological insulators feature an insulating (or gapped) band spectrum in the volume of the material.  What this gapped spectrum means is the filled valence and the empty conduction bands are separated by a finite energy difference that cannot be surmounted by electrons at room temperature. Effectively, this means there is a discontinuity present between the filled states and the empty states. Although the bulk is insulating, the surface enclosing the bulk possesses conducting (or gapless) states. These gapless states are termed chiral currents, which are characterized by spin-momentum locking. Effectively, the propagation direction of the charge carriers is set by their spin degree of freedom. These surface states cross the bulk band gap connecting the bulk valence and conduction bands. At energies and momenta near the surface band crossing points in these systems, the dispersion attains a form of a non-relativistic version of a massless Dirac dispersion relation. The chiral surface states are "protected" from being gapped, for sufficiently thick samples so as to prevent the hybridization and subsequent gapping of opposite moving chiral states, as long as time-reversal symmetry is preserved. Topological insulators are not simply a theoretical construct.  A number of materials like HgTe quantum well structures, an example of a 2D topological insulator, and BiSe$_3$, a 3D topological insulator, have been discovered that demonstrate chiral surface currents and an insulating bulk.\cite{konig_quantum_2007,zhang_topological_2009} 
+Topological insulators feature an insulating (or gapped) band spectrum in the volume of the material.  What this gapped spectrum means is the filled valence and the empty conduction bands are separated by a finite energy difference that cannot be surmounted by electrons at room temperature. The gapped spectrum is a discontinuity between the filled states and the empty states. Although the bulk is insulating, the surface enclosing the bulk possesses conducting (or gapless) states. These gapless states are termed chiral currents, which are characterized by spin-momentum locking. Effectively, the propagation direction of the charge carriers is set by their spin degree of freedom. These surface states cross the bulk band gap and connect the bulk valence and conduction bands. At energies and momenta near the surface band crossing points, the dispersion attains a non-relativistic massless Dirac dispersion relation. The chiral surface states are "protected" from being gapped, for sufficiently thick samples so as to prevent the hybridization and subsequent gapping of opposite moving chiral states, as long as time-reversal symmetry is preserved. Topological insulators are not simply a theoretical construct.  A number of materials like HgTe quantum well structures, an example of a 2D topological insulator, and BiSe$_3$, a 3D topological insulator, have been discovered that demonstrate chiral surface currents and an insulating bulk.\cite{konig_quantum_2007,zhang_topological_2009} 
 
 \subsection{Introducing Weyl and Dirac semimetals.}
 
@@ -106,19 +134,19 @@ E_{n,\uparrow}\left({\bf k}\right)=E_{n,\downarrow}\left(-{\bf k}\right).
 E_{n,\uparrow}\left({\bf k}\right)=E_{n,\downarrow}\left({\bf k}\right),
 \end{equation}
 
-\noindent which indicates that there is a double degeneracy for bands of different spin components at each k-point. If there is a degeneracy of bands, at some momentum ${\bf k}_{0}$, of different quantum number $n$,say $n$ and $n+1$, then that band crossing point is four-fold degenerate.  If we expand the Hamiltonian for momenta near the band crossing point and if the result gives a gapless dispersion relation that is linear with momentum,  then this band crossing point can be regarded as an emergent  non-relativistic Dirac particle. In the case where there is a breaking of time-reversal symmetry, or inversion-symmetry, or both, the double degeneracy of the a single band is lifted over generic points in the Brillouin zone. In this case, when two such bands meet at the same energy at some momentum in the Brillouin zone, there is a degeneracy of two. If one expands the Hamiltonian around the momentum crossing point of the two bands, and if one finds a relativistic Weyl dispersion, such band crossings are called Weyl nodes. Each Weyl node carries a non-zero ``charge'' which is computed by integrating the Berry curvature around a small closed surface $S$ that encloses the Weyl node.  This is defined as the Chern number:
+\noindent which indicates that there is a double degeneracy for bands of different spin components at each k-point. If there is a degeneracy of bands, at some momentum ${\bf k}_{0}$, of different quantum number $n$, say $n$ and $n+1$, then that band crossing point is four-fold degenerate.  If we expand the Hamiltonian for momenta near the band crossing point and if the result gives a gapless dispersion relation that is linear with momentum,  then this band crossing point can be regarded as an emergent  non-relativistic Dirac particle. In the case where there is a breaking of time-reversal symmetry, or inversion-symmetry, or both, the double degeneracy of the a single band is lifted over generic points in the Brillouin zone. When two such bands meet at the same energy at some momentum in the Brillouin zone, there is a degeneracy of two. If one expands the Hamiltonian around the momentum crossing point of the two bands, and if one finds a non-relativistic Weyl dispersion, such band crossings are called Weyl nodes. Each Weyl node carries a non-zero ``charge'' which is computed by integrating the Berry curvature, $\vec{\Omega}_{n}(\bf{k})$, around a small closed surface $S$ that encloses the Weyl node.  This is defined as the Chern number:
 
 \begin{eqnarray}
 C = \frac{1}{2\pi} \sum_{n=1}^{n=N} \oint_S \vec{\Omega}_{n}(\text{k}) \cdot d\vec{S}_{\vec{k}}\\
-\vec{\Omega}_{n}(\bf{k}) = \nabla_{\bf{k}} \times -i \langle u_n(\bf{k}) |  \nabla_{\bf{k}} |u_n(\bf{k})\rangle
+\vec{\Omega}_{n}(\bf{k}) = \nabla_{\bf{k}} \times -i \langle u_n (\bf{k}) |  \nabla_{\bf{k}} |u_n (\bf{k})\rangle
 \end{eqnarray}
 
 \noindent $|u_n(\bf{k})\rangle$ is the Bloch wavefunction. Here we assume there are $N$ filled bands.   
 
-Weyl semimetals have a bulk momentum space that is characterized by an even number of band crossing points where two non-degenerate bands meet. The total Chern number of all the Weyl points in the bulk momentum space is zero, which indicates that there are equal number of Weyl points with opposite Chern number in the bulk Brillouin zone.  These degeneracies are stable so long as they remain in different momentum space points.  If the Weyl points of opposite Chern number coincide in momentum space, the degenercy of the two states is lifted and one finds a finite energy gap.  The degeneracies in the bulk momentum space of the Weyl semimetal have interesting surface states that appear on the surface Brillouin zone of the Weyl semimetal. These surface states are known as Fermi arcs which are incomplete Fermi surfaces that connect the surface projections of the bulk Weyl points on opposite surfaces.  
+Weyl semimetals have a bulk momentum space that is characterized by an even number of band crossing points where two non-degenerate bands meet. The total Chern number of all the Weyl points in the bulk momentum space is zero, which indicates that there are equal number of Weyl points with opposite Chern number in the bulk Brillouin zone.  These degeneracies are stable as long as they remain at different momenta.  If the Weyl points of opposite Chern number coincide in momentum space, the degenercy of the two states is lifted and one finds a finite energy gap.  The degeneracies in the bulk momentum space of the Weyl semimetal have interesting surface states that appear on the surface Brillouin zone of the Weyl semimetal. These surface states are known as Fermi arcs which are incomplete Fermi surfaces that connect the surface projections of the bulk Weyl points on opposite surfaces.  
 
 For Dirac semimetals the Dirac point is a four-fold degenerate point in momentum space.  This point has a vanishing net Chern number since it contains two Weyl points of opposite Chern number. Certain symmetries are needed required in order for the Dirac point to remain stable at the same momentum space point.  At first, the existence of a Dirac semimetal was thought to exist at the phase boundary between a topological insulator and a conventional insulator, as long as time reversal and inversion symmetry were preserved, thereby giving a four-fold degenerate bulk band crossing at the phase boundary \cite{noauthor_topological_nodate}.  
-Initially, a 3D Dirac semimetal was theoretically predicted and realized experimentally in BiTl(S$_{1-\delta}$ Se$_{\delta}$)$_2$ and (Bi$_{1-\delta}$In$_{\delta}$)$_{2}$ Se$_3$ as a phase transition between a trivial insulator and a 3D topological insulator \cite{xu_topological_2011,brahlek_topological-metal_2012}.  However, there have since been other realizations of topological Dirac semimetals.   
+A material that exhibits this property was theoretically predicted and realized experimentally in BiTl(S$_{1-\delta}$ Se$_{\delta}$)$_2$ and (Bi$_{1-\delta}$In$_{\delta}$)$_{2}$ Se$_3$ \cite{xu_topological_2011,brahlek_topological-metal_2012}.  However, there have since been other realizations of topological Dirac semimetals.   
 
 \subsection{Gaps in knowledge: Existence of Fermi arcs in Na$_{3}$Bi.}
 
@@ -127,20 +155,22 @@ In our studies, we look at Na$_{3}$Bi, which is a theoretically and experimental
 \begin{eqnarray}\label{H_effective}
 H(\textbf{k}) = \epsilon_{0}(\textbf{k})I^{4\times4}_{0} +
 \begin{bmatrix}
-M(\textbf{k}) & Ak_{+} & 0 & 0 \\
-Ak_{-} & -M(\textbf{k}) & 0 & 0 \\
-0 & 0 & M(\textbf{k}) & -Ak_{-} \\
-0 & 0 & -Ak_{+} & -M(\textbf{k})
+M(\textbf{k}) & \lambda k_{+} & 0 & 0 \\
+\lambda k_{-} & -M(\textbf{k}) & 0 & 0 \\
+0 & 0 & M(\textbf{k}) & -\lambda k_{-} \\
+0 & 0 & -\lambda k_{+} & -M(\textbf{k})
 \end{bmatrix}
 \end{eqnarray}
 
-\noindent Here $\epsilon_{0}(\textbf{k}) = C_{0} + C_{1}k^2_{z} + C_{2} (k^2_{x}+k^2_{y})$, $k_{\pm} = k_{x} \pm k_{y}$, and $M(\textbf{k}) = M_{0} - M_{1}k^2_{z} - M_{2}(k^2_{x} + k^2_{y})$. $I^{4\times4}_{0}$ denotes the $4 \times 4$ identity matrix. After diagonalizing equation (\ref{H_effective}) we find the energy eigenvalues are:
+\noindent Here $\epsilon_{0}(\textbf{k})$ is some momentum dependent offset energy, $k_{\pm} = k_{x} \pm k_{y}$, and $M(\textbf{k}) = M_{0} - M_{1}k^2_{z} - M_{2}(k^2_{x} + k^2_{y})$. $I^{4\times4}_{0}$ denotes the $4 \times 4$ identity matrix. This Hamiltonian is written in the basis of $| S_{J=\frac{1}{2}},J_{z} = \frac{1}{2}  \rangle$, $| P_{J=\frac{3}{2}},J_{z} = \frac{3}{2}  \rangle$,
+$| S_{J=\frac{1}{2}},J_{z} = -\frac{1}{2}  \rangle$,
+and $| P_{J=\frac{3}{2}},J_{z} = -\frac{3}{2}  \rangle$.  After diagonalizing equation (\ref{H_effective}) we find the energy eigenvalues are:
 
 \begin{eqnarray}\label{E_pm}
-E_{\pm}(\textbf{k}) = C_{0} + C_{2}k_{+}k_{-} + C_{1} k^2_{z} \pm \sqrt{A^2 k_{+} k_{-}   + (- M_{0} + k^2_{z} M_{1} + M_{2} k_{+} k_{-} )^2}
+E_{\pm}(\textbf{k}) =\epsilon_{0}(\textbf{k}) \pm \sqrt{A^2 k_{+} k_{-}   + (- M_{0} + k^2_{z} M_{1} + M_{2} k_{+} k_{-} )^2}
 \end{eqnarray}
 
-\noindent Clearly, the energy difference between the two energy eigenvalues vanishes if the term in the square root is zero.  One way this occurs is for two momenta $\textbf{k}^{D}_{\pm} = ( 0, 0, \pm \sqrt{M_{0}/M_{1}} )$, which are the locations of the Dirac points along the $z$-axis. Since there are two Weyl points per Dirac node, there should be twice as many Fermi arcs on the surfaces of a Dirac semimetal. However, not all surfaces have Fermi arcs; they exist on surfaces whose surface normals are not along the z-axis (along such surfaces, the Dirac points project onto a single Dirac point). Surfaces orthogonal to the axis containing the Dirac points will instead have a Dirac point crossing at that surface in the band plot.
+\noindent Clearly, the energy difference between the two energy eigenvalues vanishes if the term in the square root is zero.  It can occur for two momenta $\textbf{k}^{D}_{\pm} = ( 0, 0, \pm \sqrt{M_{0}/M_{1}} )$, which are the locations of the Dirac points along the $z$-axis. Since there are two Weyl points per Dirac node, there should be twice as many Fermi arcs on the surfaces of a Dirac semimetal. However, not all surfaces have Fermi arcs; they exist on surfaces whose surface normals are not along the z-axis (along such surfaces, the Dirac points project onto a single Dirac point). Surfaces orthogonal to the axis containing the Dirac points will instead have a Dirac point crossing at that surface in the band plot.
 
 
 \subsection{Gaps in knowledge: band gap oscillations in Na$_{3}$Bi?}
@@ -164,7 +194,7 @@ Here $c^{\dagger}_{i,j,k}$ and $c_{i,j,k}$ are creation and destruction operator
 We investigated whether or not the Fermi arc surface states of Na$_{3}$Bi exist on the (110) direction, or more accurately the (11$\bar{2}$0) direction, since we are dealing with a hexagonal lattice. We chose this direction because this surface is parallel to the $k_{z}$ axis along which there are two Dirac point crossings.  It is believed the Fermi arc surface states appear on this surface for $k_{z}=0$ since this momentum is time-reversal symmetric \cite{kargarian_are_2016}. However, it's not clear if such surface states exist, since terms that respect the symmetries of Na$_{3}$Bi and do not gap out the bulk Dirac points can gap out the Fermi arc surface states\cite{kargarian_are_2016}.  Given that a previous study \cite{xu_observation_2015} has confirmed the existence of Fermi arcs along the (100) direction, we attempted to reproduce the findings in order to give us an intuition about the signatures of such surface states.  
 
 \begin{figure}[H]
-\includegraphics[scale=0.45]{Na3Bi100_var_nlayers_vac23A_.png}\caption{\label{fig:Na3Bi_100_var_nlayers_vac23A} Band plots for a 23 A vacuum surrounding a varying number of Na$_3$Bi (100) layers. The red line is the Fermi level.}
+\includegraphics[scale=0.40]{Na3Bi_100_nlayer_var_vac23A.png}\caption{\label{fig:Na3Bi_100_var_nlayers_vac23A} Band plots for a 23 A vacuum surrounding a varying number of Na$_3$Bi (100) layers. The red line is the Fermi level.}
 \end{figure}
 
 We see in Figure \ref{fig:Na3Bi_100_var_nlayers_vac23A} the number of bands increases as we increase the number of layers orthogonal to the (100) direction.  We should expect to see a bulk Dirac point emerge between the k-points $\tilde{A}$ and $\tilde{\Gamma}$.   However, we need thicker structures in order to see this Dirac point. We are also unable to distinguish the Fermi arc surface states from the bulk states, which requires thicker structures beyond 12 layers, along with possible relaxations in the crystal geometry.  
@@ -172,10 +202,10 @@ We see in Figure \ref{fig:Na3Bi_100_var_nlayers_vac23A} the number of bands incr
 \subsection{Na$_{3}$Bi (110) slab and vacuum thickness effects on Na$_{3}$Bi's band structure.}
 
 \begin{figure}[H]
-\includegraphics[scale=0.4]{Na3Bi_110_var_nlayers_vac15A.png}\caption{\label{fig:Na3Bi_100_var_nlayers_vac15A}Band plots of the Na$_{3}$Bi (110) system with fixed vacuum thickness but varying system thickness. The red line is the Fermi level.}
+\includegraphics[scale=0.4]{Na3Bi_110_var_nlayers_vac15A.png}\caption{\label{fig:Na3Bi_110_var_nlayers_vac15A}Band plots of the Na$_{3}$Bi (110) system with fixed vacuum thickness but varying system thickness. The red line is the Fermi level.}
 \end{figure}
 
-Figure \ref{fig:Na3Bi_100_var_nlayers_vac15A} demonstrates that as the number of Na$_{3}$Bi layers increases, the band gap size at the $\bar{\Gamma}$ point oscillates. Odd number of layers have a smaller band gap than even number of layers. This is consistent with the observed oscillatory decay of Na$_{3}$Bi's band gap when the confining direction (i.e. the direction with open boundary conditions) is along the z-direction \cite{xiao_anisotropic_2015}.  
+Figure \ref{fig:Na3Bi_110_var_nlayers_vac15A} demonstrates that as the number of Na$_{3}$Bi layers increases, the band gap size at the $\bar{\Gamma}$ point oscillates. Odd number of layers have a smaller band gap than even number of layers. This is consistent with the observed oscillatory decay of Na$_{3}$Bi's band gap when the confining direction (i.e. the direction with open boundary conditions) is along the z-direction \cite{xiao_anisotropic_2015}. Overall the oscillating band gap of the (110) layers is in contrast to what is seen in Figure \ref{fig:Na3Bi_100_var_nlayers_vac23A} for the (100) direction.  
 
 
 

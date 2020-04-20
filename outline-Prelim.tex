@@ -1,0 +1,173 @@
+\documentclass[english]{revtex4-1}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{3}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{comment}
+
+\usepackage{biblatex}
+
+\addbibresource{Prelim.bib}
+
+
+
+\begin{document}
+\title{Prelim outline draft.}
+
+
+\section{Introduce gaps in knowledge.}
+
+\begin{comment}
+\begin{enumerate}
+    \item Introduce Density Functional theory.
+    
+    \begin{itemize}
+        \item Introduce the many-particle Schrodinger equation.
+        
+        \item Difficulties in solving the many-particle Schrodinger equation for realistic solids necessitates approximations.
+        
+        \item Introduce the Born-Oppenheimer approximation as one of the simplifications to solving the many-particle Schrodinger equation.
+        
+        \item Introduce Kohn-Sham methods as computationally more tractable means of solving the many-electron Schrodinger equation. 
+    \end{itemize}
+    \end{enumerate}
+\end{comment}
+
+\begin{enumerate}
+    \item Topological insulators.
+
+    \begin{itemize}
+    
+        \item Topological insulators have a bulk-boundary correspondence that explains their peculiar electronic conductivity. 
+        
+        \item The Chern number of the bulk bands can determine the existence of gapless surface states in topological insulators.
+        
+        \item Despite the bulk-boundary correspondence giving an understanding of topological insulators, there are another class of gapless bulk materials where this correspondence does not completely describe their electronic behavior.  
+    
+    \end{itemize}
+    
+    \item Weyl semimetals and topological Dirac semimetals.
+    
+    \begin{itemize}
+    
+        \item Weyl and Dirac semimetals have a gapless bulk, unlike topological insulators.  
+    
+        \item Dirac semimetals have a 4-fold degenerate bulk band crossing as opposed to Weyl semimetals which have a 2-fold bulk degenerate bulk band crossing.
+        
+        \item The Chern number, or the chiral "charge", of the bulk band crossing is zero for Dirac semimetals, whereas for Weyl semimetals the bulk band crossing has a non-zero Chern number.
+        
+        \item Weyl points of opposite chiral charge have states that connect the surface projections of these Weyl points.  These states are called Fermi arcs.
+        
+        \item Since Dirac semimetals have bulk band crossings which contain two Weyl points of opposite chiral charge, they also have Fermi arcs.  
+        
+        \item Dirac semimetals were initially proposed to exist at a phase transition point separating a topological insulator from a trivial insulator.
+        
+        \item Since then, there have been other natural Dirac semimetals discovered.
+        
+    \end{itemize}
+    
+    \item We focus on a particular natural topological Dirac semimetal, Na$_3$Bi. 
+    
+    \begin{itemize}
+    
+        \item Topological Dirac semimetals are Dirac semimetals with a non-vanishing mirror Chern number at the $k_z = 0$ and $k_z = \pi$ planes.
+        
+        \item Na$_3$Bi has strong spin-orbit coupling, time-reversal and inversion symmetries.
+        
+        \item It also has $C_3$ rotation symmetry about the $z$ axis.
+        
+        \item There are two Dirac points along the $k_z$ axis, which are prevented from being gapped out by the aforementioned $C_3$ rotation symmetry.
+        
+        \item Na$_3$Bi has surface states that do not follow the bulk-boundary correspondence that governs the behavior of Fermi arc states in Weyl semimetals, since the monopole charge of the Dirac points is zero. 
+        
+    \end{itemize}    
+
+    \item Gaps in knowledge: existence of Fermi arcs in Na$_3$Bi.
+    
+    \begin{itemize}
+    
+        \item Some papers discussed whether Fermi arcs in Dirac semimetals, like Na$_3$Bi, can exist on surfaces whose surface normals are not along the z-axis (along surfaces with normals along the z axis, the Dirac points and their associated Fermi arc states project onto a single Dirac point). \cite{kargarian_are_2016}
+
+        \item By studying the symmetries of certain planes  of Na$_{3}$Bi using K-theory analysis and an effective field theory model, the authors of \cite{kargarian_are_2016} indicate certain surfaces like the (110) surface of Na$_{3}$Bi possess Fermi arc states.
+
+        \item A first principles analysis employing density functional theory (DFT) with spin-orbit coupling has not been performed to support such claims.
+
+    \end{itemize}
+   
+     \item Gaps in knowledge: band gap oscillations in  Na$_3$Bi.
+   
+    \begin{itemize}
+        
+        \item Slabs of Na$_{3}$Bi exhibit band gap oscillations that decay as the slab thickness is increased along certain directions \cite{xiao_anisotropic_2015}. 
+        
+        \item However, this observation was based on a tight-binding model\cite{xiao_anisotropic_2015}. An analysis involving DFT has not been implemented to support or deny such claims.
+        
+        \item Do the band gap oscillations exist for k-space paths along other Na$_{3}$Bi surfaces, such as the (100) surface?
+        
+    \end{itemize}
+
+
+
+\end{enumerate}
+
+
+\section{Demonstration of research done.}
+
+\begin{enumerate}
+
+    \item Investigating the existence of Fermi arcs in Na$_3$Bi. 
+
+         \begin{itemize}
+             \item We first verify the existence of Fermi arcs along the (100) plane of Na$_3$Bi. A previous study has confirmed the existence of Fermi arcs along this plane.\cite{xu_observation_2015}
+             
+             \item We will look at the band structure of a 14 layer thick Na$_3$Bi slab along with the real space behavior of the Fermi arc states. Aside from the bulk Dirac points, we need to find if other gapless states cross the Fermi level.  
+             
+             \item If these gapless states extend from the surface into the bulk of the sample, then these are Fermi arcs.  If the surface states are confined only to the surface, such states are not Fermi arcs.     
+             
+             \item Once we have verified that Fermi arcs are present along the (100) surface, we will use the same methodology to find if Fermi arcs exist along the (110) plane.
+             
+         \end{itemize}
+
+    \item Band gap oscillations in Na$_3$Bi.
+    
+        \begin{itemize}
+            
+            \item We have looked into whether band gap oscillations are induced by even/odd number of layers stacked along the [100] and [110] directions of Na$_3$Bi.
+            
+            \item We have discovered that the band gap oscillations do exist for layers added on the (110) plane, but are absent for layers stacked on the (100) plane.
+            
+        \end{itemize}
+    
+
+\end{enumerate}
+
+\section{Proposals.}
+
+\begin{enumerate}
+    
+    \item Can we find topological states in an insulator-topological Dirac semimetal heterostructure such as KTaO$_3$/Na$_3$Bi?  
+    
+    \begin{itemize}
+        \item The orientations of Na$_3$Bi and KTaO$_3$ will be along the (110) and (111) planes, respectively.
+        
+        \item If we don't find any topological states for this heterostructure, perhaps we can explain why they are not possible in such a system.  For example, perhaps the breaking of certain symmetries of the plain Na$_3$Bi (110) plane is responsible for the lack of topological states.
+        
+        \item Maybe we can test heterostructures of other material combinations, such as a type-I Weyl semimetal like TaAs and Na$_3$Bi?  We can attempt to answer the question: how the surface states of the type-I Weyl semimetal interact with those of Na$_3$Bi?
+        
+        \item  Another alternative question we could investigate is how do surface states of a type-II Weyl semimetal such as WTe$_2$ interact with those of Na$_3$Bi in a heterostructure of the two.
+    \end{itemize}
+    
+    \item In heterostructures comprised of a ferromagnetic or antiferromangetic material and Na$_3$Bi, are the spin orbit torques affected by the presence of both gapless bulk and surface states?
+    
+    \item Is the out-of-plane spin accumulation, which is usually affected by the bulk states, have contributions from Na$_3$Bi's  Fermi arc states, at least for orientations of the latter that have Fermi arc states?  What would be different if we looked at Na$_3$Bi planes that have closed Fermi surfaces?
+    
+\end{enumerate}
+
+
+\medskip
+
+\printbibliography
+
+\end{document}
